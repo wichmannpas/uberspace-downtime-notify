@@ -16,7 +16,7 @@ RELEVANT_HOSTS = [
     'alpheca',
 ]
 #NOTIFY_COMMAND = 'cat; echo subject: {}'
-NOTIFY_COMMAND = 'mail -s {} $USER'
+NOTIFY_COMMAND = 'mail -s "{}" $USER'
 URL = 'https://twitter.com/ubernauten'
 
 
