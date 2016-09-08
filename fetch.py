@@ -3,8 +3,8 @@
 Simple twitter page fetcher.
 
 A simple script which checks the twitter account of uberspace
-(or any other twitter account as well) for messages containing a
-specific keyword.
+(or any other twitter account as well) for messages containing
+specific keywords.
 """
 
 import html

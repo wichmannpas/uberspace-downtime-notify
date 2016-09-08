@@ -1,6 +1,12 @@
 uberspace-downtime-notify
 =========================
 
+A simple script which checks the twitter account of uberspace (or any other twitter account as well) for messages containing specific keywords.
+
+To use this script, adopt the RELEVANT_HOSTS variable to fit your needs. If you can not delay emails locally (or want to deliver them to another user), change the NOTIFY_COMMAND, too.
+
+A possible deployment would be in a cronjob on an uberspace account which launches the script once (or maybe twice) per day.
+
 
 License
 -------
