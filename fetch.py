@@ -78,7 +78,7 @@ def get_stored_hashes() -> list:
 def check_relevance(message: str) -> str:
     """Check if a message is relevant and return host."""
     for host in RELEVANT_HOSTS:
-        if host in message:
+        if host.lower() in message.lower():
             return host
 
 def clean_message(message: str) -> str:
