@@ -44,7 +44,7 @@ def get_messages():
             send_notification(host, message)
 
 
-def send_notification(host: str, message: str):
+def send_notification(host, message):
     """Send a notification message."""
     if check_for_done_notification(message):
         # notification has already been sent
@@ -54,7 +54,7 @@ def send_notification(host: str, message: str):
         NOTIFY_COMMAND.format(subject), shell=True,
         stdin=subprocess.PIPE).communicate(message.encode())
 
-def check_for_done_notification(message: str) -> bool:
+def check_for_done_notification(message):
     """Check whether a notification message has been sent already and store
     the hash."""
     hash = hashlib.sha256(message.encode()).hexdigest()
@@ -64,24 +64,24 @@ def check_for_done_notification(message: str) -> bool:
     return False
 
 
-def add_stored_hash(hash: str):
+def add_stored_hash(hash):
     with open(STORE_FILE, 'a') as file:
         file.write('{}\n'.format(hash))
 
 
-def get_stored_hashes() -> list:
+def get_stored_hashes():
     if not os.path.isfile(STORE_FILE):
         return []
     with open(STORE_FILE, 'r') as file:
         return file.read().split('\n')
 
-def check_relevance(message: str) -> str:
+def check_relevance(message):
     """Check if a message is relevant and return host."""
     for host in RELEVANT_HOSTS:
         if host.lower() in message.lower():
             return host
 
-def clean_message(message: str) -> str:
+def clean_message(message):
     """Html-unescape and strip html from a message."""
     message = html.unescape(message)
     pattern = re.compile(r'<[^>]*>')
