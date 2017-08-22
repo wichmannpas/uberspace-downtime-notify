@@ -19,7 +19,7 @@ Specify the hosts relevant to you in the RELEVANT_HOSTS variable in the file `fe
 
 Configure a cronjob (i.e., `crontab -e`), for example this line to check all six hours:
 
-    0  */6    *   *   *   $HOME/uberspace-downtime-notify/fetch.py
+    0  */6    *   *   *   /usr/local/bin/python3 $HOME/uberspace-downtime-notify/fetch.py
 
 Notification emails quoting the relevant Twitter thread will be sent to your primary email address of your Uberspace account (you can change this behaviour in the NOTIFY_COMMAND variable).
 
