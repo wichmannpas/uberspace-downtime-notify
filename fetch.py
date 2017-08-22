@@ -7,8 +7,9 @@ specific keywords.
 """
 
 import hashlib
-import html
 import os
+from HTMLParser import HTMLParser
+html = HTMLParser()
 import re
 import requests
 import subprocess
@@ -89,4 +90,3 @@ def clean_message(message):
 
 
 if __name__ == '__main__':
-    main()
